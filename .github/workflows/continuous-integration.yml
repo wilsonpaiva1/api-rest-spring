@@ -26,11 +26,11 @@ jobs:
         cache: maven
     
     - name: Build Application jar
-      working-directory: ./api-rest-spring
+      working-directory: CursoRest/api-rest-spring
       run: mvn clear package
     
     - name: Docker compose build
-      working-directory: CursoRest
+      working-directory: ../
       run: docker compose build
       
     - name: Push to Docker Hub Container Registry
