@@ -30,7 +30,7 @@ jobs:
       run: mvn clear package
     
     - name: Docker compose build
-      working-directory: ../
+      working-directory: ./api-rest-spring
       run: docker compose build
       
     - name: Push to Docker Hub Container Registry
