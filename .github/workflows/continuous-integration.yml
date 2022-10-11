@@ -20,7 +20,7 @@ jobs:
         
     - name: Build Application jar
       working-directory: ../api-rest-spring
-      run: mvn -e clear package 
+      run: mvn clear package -e  
     
     - name: Set up JDK 18
       uses: actions/setup-java@v3
