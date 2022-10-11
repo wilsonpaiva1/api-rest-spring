@@ -33,7 +33,7 @@ jobs:
     
     - name: Docker compose build
       working-directory: ../api-rest-spring
-      run: docker compose build
+      run: docker compose build -e
       
     - name: Push to Docker Hub Container Registry
       run: |
