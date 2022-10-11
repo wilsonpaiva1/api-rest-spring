@@ -31,8 +31,8 @@ jobs:
     #  working-directory: ../api-rest-spring
     #  run: mvn clean package -e
     
-    #- name: Docker compose build
-    #  working-directory: ../api-rest-spring
+    - name: Docker compose build
+      working-directory: ../api-rest-spring
     #  run: docker compose build
     
     - name: Push to Docker Hub Container Registry
