@@ -30,6 +30,7 @@ jobs:
       run: mvn clean package -e
     
     - name: Docker compose build
+      working-directory: ../
       run: docker compose build --tag imageTESTE
       
     - name: Push to Docker Hub Container Registry
