@@ -17,7 +17,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        
+        run: |
+          docker images
       
     
     #- name: Set up JDK 18
@@ -31,10 +32,9 @@ jobs:
     #  working-directory: ../api-rest-spring
     #  run: mvn clean package -e
     
-    - name: Docker compose build
-      working-directory: ../api-rest-spring
-      run: |
-       docker images
+    #- name: Docker compose build
+    #  working-directory: ../api-rest-spring
+
     #  run: docker compose build
     
     #- name: Push to Docker Hub Container Registry
