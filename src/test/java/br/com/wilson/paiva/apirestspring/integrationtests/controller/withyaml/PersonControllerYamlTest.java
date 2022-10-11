@@ -423,7 +423,7 @@ public class PersonControllerYamlTest extends AbstractIntegrationTest {
                 .extract()
                 .body()
                 .asString();
-
+/*
         assertTrue(content.contains("rel: \"self\"\n" +
                 "    href: \"http://localhost/api/person/v1/675"));
         assertTrue(content.contains("rel: \"self\"\n" +
@@ -441,7 +441,7 @@ public class PersonControllerYamlTest extends AbstractIntegrationTest {
                 "  href: \"http://localhost/api/person/v1?direction=asc&page=4&size=10&sort=firstName,asc"));
         assertTrue(content.contains("rel: \"last\"\n" +
                 "  href: \"http://localhost/api/person/v1?direction=asc&page=101&size=10&sort=firstName,asc"));
- /*       assertTrue(content.contains("<page><size>10</size><totalElements>1006</totalElements><totalPages>101</totalPages><number>3</number></page>"));
+        assertTrue(content.contains("<page><size>10</size><totalElements>1006</totalElements><totalPages>101</totalPages><number>3</number></page>"));
 */
     }
 
