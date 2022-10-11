@@ -31,7 +31,7 @@ jobs:
     
     - name: Docker compose build
       working-directory: ../
-      run: docker compose build --tag imageTESTE
+      run: docker compose build
       
     - name: Push to Docker Hub Container Registry
       run: docker images  
