@@ -34,5 +34,5 @@ jobs:
       run: docker compose build
       
     - name: Push to Docker Hub Container Registry
-      run: docker image
+      run: docker images
         
