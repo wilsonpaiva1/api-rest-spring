@@ -37,9 +37,9 @@ jobs:
       
     - name: Push to Docker Hub Container Registry
       run: |
-        docker tag wilsonpaiva/api-rest-spring:latest wilsonpaiva/api-rest-spring:${{ github.run_id }}
-        docker push wilsonpaiva/api-rest-spring:${{ github.run_id }}
-        docker push wilsonpaiva/api-rest-spring:latest    
+        docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
+        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
+        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest    
         
         
         
