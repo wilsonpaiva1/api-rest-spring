@@ -30,15 +30,16 @@ jobs:
       run: mvn clean package -e
     
     - name: Docker compose build
-      working-directory: ../api-rest-spring 
+      working-directory: ../api-rest-spring
       run: docker compose build
       
-    - name: Build and push
-      uses: actions/checkout@v3
-    -  run: |
-        docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
-          
-    #- name: Push to Docker Hub Container Registry
+    - name: Push to Docker Hub Container Registry
+      run: |
+        docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USERNAME }}/api-rest-spring:${{ github.run_id }}
+        
+        #docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
+        
+        #docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest    #- name: Push to Docker Hub Container Registry
     #  uses: docker/build-push-action@v3
     #  run: |
     #    docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
