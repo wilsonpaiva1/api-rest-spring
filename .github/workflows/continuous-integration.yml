@@ -31,11 +31,10 @@ jobs:
     #  run: mvn clean package -e
     
     #- name: Docker compose build
-    #  working-directory: 
-      #run: docker compose build
-    defaults:
-      run: |
-        docker images
+    #  working-directory: ../api-rest-spring 
+       #run: docker compose build
+        run: |
+          docker ps
     #- name: Push to Docker Hub Container Registry
     #  run: |
     #    docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
