@@ -26,11 +26,11 @@ jobs:
         cache: maven
     
     - name: Build Application jar
-      working-directory: ./api-rest-spring
+      working-directory: ./
       run: mvn clear package
     
     - name: Docker compose build
-      working-directory: api-rest-spring
+      working-directory: ./api-rest-spring
       run: docker compose build
       
     - name: Push to Docker Hub Container Registry
