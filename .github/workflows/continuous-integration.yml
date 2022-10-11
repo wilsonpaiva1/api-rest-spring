@@ -18,9 +18,7 @@ jobs:
         username: ${{ secrets.DOCKER_USER_NAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
-    - name: Build Application jar
-      working-directory: ../api-rest-spring
-      run: mvn clear package -e  
+      
     
     - name: Set up JDK 18
       uses: actions/setup-java@v3
@@ -29,7 +27,9 @@ jobs:
         distribution: 'adopt'
         cache: maven
     
-
+    - name: Build Application jar
+      working-directory: ../api-rest-spring
+      run: mvn clean package -e
     
     - name: Docker compose build
       working-directory: ../api-rest-spring
