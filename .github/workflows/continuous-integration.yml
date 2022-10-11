@@ -31,9 +31,8 @@ jobs:
     
     - name: Docker compose build
       working-directory: ../api-rest-spring
-      run: docker compose build . --file Dockerfile --tag image
+      run: docker compose build
       
     - name: Push to Docker Hub Container Registry
-      run: |
-        docker imageid
-        #docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:v5  
+      run: docker image
+        
