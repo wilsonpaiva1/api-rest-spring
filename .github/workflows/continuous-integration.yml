@@ -30,8 +30,7 @@ jobs:
       run: mvn clean package -e
     
     - name: Docker compose build
-      run: docker compose build
+      run: docker build . --file Dockerfile --tag image
       
     - name: Push to Docker Hub Container Registry
-      run: docker images
-        
+      run: docker images  
