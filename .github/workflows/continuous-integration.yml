@@ -40,7 +40,8 @@ jobs:
         docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
 
         docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest
+        docker push wilsonpaiva/api-rest-spring:latest
+                                        
         
         
         
