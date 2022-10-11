@@ -19,7 +19,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Build Application jar
-      working-directory: ./api-rest-spring
+      working-directory: ../
       run: mvn clear package
     
     - name: Set up JDK 18
