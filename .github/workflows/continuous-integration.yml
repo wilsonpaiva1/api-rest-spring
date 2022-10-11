@@ -20,25 +20,25 @@ jobs:
         
       
     
-    - name: Set up JDK 18
-      uses: actions/setup-java@v3
-      with:
-        java-version: '18'
-        distribution: 'adopt'
-        cache: maven
+    #- name: Set up JDK 18
+    #  uses: actions/setup-java@v3
+    #  with:
+    #    java-version: '18'
+    #    distribution: 'adopt'
+    #    cache: maven
     
-    - name: Build Application jar
-      working-directory: ../api-rest-spring
-      run: mvn clean package -e
+    #- name: Build Application jar
+    #  working-directory: ../api-rest-spring
+    #  run: mvn clean package -e
     
-    - name: Docker compose build
-      working-directory: ../api-rest-spring
-      run: docker compose build
+    #- name: Docker compose build
+    #  working-directory: ../api-rest-spring
+    #  run: docker compose build
       
-    - name: Push to Docker Hub Container Registry
-      run: |
-        docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USERNAME }}/api-rest-spring:${{ github.run_id }}
-        
-        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
-        
-        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest
+    #- name: Push to Docker Hub Container Registry
+    #  run: |
+    #    docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USERNAME }}/api-rest-spring:${{ github.run_id }}
+    #    
+    #    docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
+    #    
+    #    docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest
