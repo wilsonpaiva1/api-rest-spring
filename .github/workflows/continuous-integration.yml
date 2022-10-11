@@ -31,7 +31,7 @@ jobs:
     #  run: mvn clean package -e
     
     - name: Docker compose build
-      working-directory: api-rest-spring
+      working-directory: ../
       #run: docker compose build
       run: |
        docker images
