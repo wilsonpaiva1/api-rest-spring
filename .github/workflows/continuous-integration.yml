@@ -33,14 +33,13 @@ jobs:
     
     - name: Docker compose build
       working-directory: ../api-rest-spring
-      run: docker compose build -e
+      run: docker compose build
       
     - name: Push to Docker Hub Container Registry
       run: |
-        docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest
-                                        
+        docker tag wilsonpaiva/api-rest-spring:latest wilsonpaiva/api-rest-spring:${{ github.run_id }}
+        docker push wilsonpaiva/api-rest-spring:${{ github.run_id }}
+        docker push wilsonpaiva/api-rest-spring:latest    
         
         
         
