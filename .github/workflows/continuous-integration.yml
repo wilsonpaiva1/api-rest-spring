@@ -34,6 +34,6 @@ jobs:
       #working-directory: ../api-rest-spring
       
     - name: Push to Docker Hub Container Registry
-      #working-directory: ../api-rest-spring
+      working-directory: /home/runner/work/api-rest-spring/api-rest-spring
       run: |
         docker tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:${{ github.run_id }}
