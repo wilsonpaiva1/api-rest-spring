@@ -30,7 +30,7 @@ jobs:
       run: mvn clean package -e
     
     - name: Docker Build
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest
+      run: docker compose build . --file Dockerfile --tag ${{ secrets.DOCKER_USER_NAME }}/api-rest-spring:latest
       
     - name: Push to Docker Hub Container Registry
       run: |
